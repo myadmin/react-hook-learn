@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const isFalsy = (value: any) => (value === 0 ? true : !value);
+export const isFalsy = (value: unknown) => (value === 0 ? true : !value);
 
 //在一个函数里，改变传入的对象本身是不好的
 export const cleanObject = (object: object) => {
@@ -16,13 +16,14 @@ export const cleanObject = (object: object) => {
     return result;
 };
 
-export const useMount = (callback: () => void) => {
+export const useMount = (fn: () => void) => {
     useEffect(() => {
-        callback();
+        fn();
     }, []);
 };
 
-export const useDebounce = (value: any, delay?: number) => {
+//后面用泛型来规范类型
+export const useDebounce = (value: unknown, delay?: number): any => {
     const [debouncedValue, setDebouncedValue] = useState(value);
 
     useEffect(() => {
