@@ -3,6 +3,7 @@ import { ProjectListScreen } from "screens/project-list";
 import { useAuth } from "context/auth-context";
 import { Button } from "antd";
 import styled from "@emotion/styled";
+import { Row } from "components/lib";
 
 /*
  * grid 和 flex 各自的应用场景
@@ -19,8 +20,8 @@ export const AuthenticatedApp = () => {
 
     return (
         <Container>
-            <Header>
-                <HeaderLeft>
+            <Header between={true}>
+                <HeaderLeft gap={true}>
                     <h3>Logo</h3>
                     <h3>项目</h3>
                     <h3>用户</h3>
@@ -43,17 +44,8 @@ const Container = styled.div`
 `;
 
 //grid-area 用来给grid子元素取名字
-const Header = styled.header`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-`;
-const HeaderLeft = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`;
+const Header = styled(Row)``;
+const HeaderLeft = styled(Row)``;
 
 const HeaderRight = styled.div``;
 const Main = styled.main``;
