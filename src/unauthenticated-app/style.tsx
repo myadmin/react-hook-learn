@@ -27,14 +27,14 @@ export const Background = styled.div`
 
 export const Header = styled.header`
     background: url(${logo}) no-repeat center;
-    padding: 5rem 0;
+    padding: 10rem 0 5rem 0;
     background-size: 8rem;
     width: 100%;
 `;
 
 export const ShadowCard = styled(Card)`
     width: 40rem;
-    min-height: 56rem;
+    min-height: 36rem;
     padding: 3.2rem 4rem;
     border-radius: 0.3rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
