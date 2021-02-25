@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RegisterScreen } from "./register";
 import { LoginScreen } from "./login";
-import { Divider } from "antd";
+import { Button, Divider } from "antd";
 import * as Style from "./style";
 
 export const UnauthenticatedApp = () => {
@@ -15,11 +15,14 @@ export const UnauthenticatedApp = () => {
                 <Style.Title>{isRegister ? "请注册" : "请登录"}</Style.Title>
                 {isRegister ? <RegisterScreen /> : <LoginScreen />}
                 <Divider />
-                <a onClick={() => setIsRegister(!isRegister)}>
+                <Button
+                    type={"link"}
+                    onClick={() => setIsRegister(!isRegister)}
+                >
                     {isRegister
                         ? "已经有账号了？直接登录"
                         : "没有账号？注册新账号"}
-                </a>
+                </Button>
             </Style.ShadowCard>
         </Style.Container>
     );
