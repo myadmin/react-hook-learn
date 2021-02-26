@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { RegisterScreen } from "./register";
 import { LoginScreen } from "./login";
-import { Button, Divider } from "antd";
+import { Button, Divider, Typography } from "antd";
 import * as Style from "./style";
 
 export const UnauthenticatedApp = () => {
     const [isRegister, setIsRegister] = useState(false);
+    const [error, setError] = useState<Error | null>(null);
 
     return (
         <Style.Container>
@@ -13,7 +14,16 @@ export const UnauthenticatedApp = () => {
             <Style.Background />
             <Style.ShadowCard>
                 <Style.Title>{isRegister ? "请注册" : "请登录"}</Style.Title>
-                {isRegister ? <RegisterScreen /> : <LoginScreen />}
+                {error ? (
+                    <Typography.Text type={"danger"}>
+                        {error.message}
+                    </Typography.Text>
+                ) : null}
+                {isRegister ? (
+                    <RegisterScreen onError={setError} />
+                ) : (
+                    <LoginScreen onError={setError} />
+                )}
                 <Divider />
                 <Button
                     type={"link"}
