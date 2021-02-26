@@ -7,7 +7,7 @@
 /* eslint-disable */
 /* tslint:disable */
 
-const INTEGRITY_CHECKSUM = "dc3d39c97ba52ee7fff0d667f7bc098c";
+const INTEGRITY_CHECKSUM = "65d33ca82955e1c5928aed19d1bdf3f9";
 const bypassHeaderName = "x-msw-bypass";
 
 let clients = {};

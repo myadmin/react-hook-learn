@@ -21,6 +21,7 @@ export class ErrorBoundary extends React.Component<
         if (error) {
             return fallbackRender({ error });
         }
+
         return children;
     }
 }
